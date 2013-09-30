@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CIS89C: Client-Side Programming with JavaScript Lab6</title>
+<meta charset="utf-8">
+</head>
+
+<body bgcolor="lavender">
+
+<script type="text/javascript">
+
+function movie(genre, title, rating, price) {
+this.genre = genre;
+this.title = title;
+this.rating = rating;
+this.price = price;
+this.show = showmovie;
+}
+function showmovie() {
+			document.write("Title:  "+ this.title +"<br>");
+			document.write("Genre:  "+ this.genre +"<br>");
+			document.write("Rating: "+ this.rating +"<br>");
+			document.write("Price:  "+ this.price +"<br>");
+		}
+
+
+
+movie1 = new movie("Action/sci-fi", "Starwars: The Phantom Menace", "PG", 11.99);
+
+movie2 = new movie("Sci-fi/Action","Avengers","PG-13",13.99);
+
+movie3 = new movie("Sci-fi/Action","The Amazing Spiderman","PG-13",16.99);
+
+</script>
+
+
+
+<div style="text-align: center;font-family:verdana;color:red;">
+<br><br>
+
+<br><br>
+<br>
+
+
+<script>
+
+marray = new Array();
+
+marray.push(movie1,movie2,movie3);
+
+document.write("<h2>Movies Inventory</h2><br><br>");
+document.write("Number of movies in the inventory: ", marray.length , "<br><br>");
+
+document.write("<br><br><br>");
+marray[0].show();
+document.write("<br><br><br>");
+marray[1].show();
+document.write("<br><br><br>");
+marray[2].show();
+document.write("<br><br><br>");
+
+
+function displaymovielist(){
+document.write("Number of movies in the inventory: ", marray.length , "<br><br>");
+document.write("<br>");
+var i = 0;
+for (i = 0; i < marray.length; i++)
+{
+marray[i].show();
+document.write("<br>");
+}
+}
+
+
+document.write("<h2>Pop and display first movie!</h2><br>");
+    var firstpop = marray.pop();
+    firstpop.show();
+    document.write("<br>");
+	document.write("Number of movies in the inventory: ", marray.length , "<br><br>");
+ 	
+    document.write("<h2>Pop and display second movie!</h2><br>");
+    var secondpop = marray.pop();
+    secondpop.show();
+    document.write("<br>");
+	document.write("Number of movies in the inventory: ", marray.length , "<br><br>");
+	
+    document.write("<h2>unshifting the last popped movie !</h2><br>");
+    var count = marray.unshift(secondpop);
+    
+    document.write("<br>");
+	displaymovielist();
+	
+	
+	document.write("<h2>Doing another pop!</h2><br>");
+    var anotherpop = marray.pop();
+    anotherpop.show();
+    document.write("<br>");
+    displaymovielist();
+	
+	document.write("<h2>Pushing the first popped movie!</h2><br>");
+	marray.push(firstpop);
+	displaymovielist();
+	
+	
+    document.write("<h2>Shifting movie from front of the array!</h2>");
+    document.write("<br>");
+    var shiftmovie = marray.shift();
+	
+    shiftmovie.show();
+    document.write("<br>");
+
+   displaymovielist();
+    
+    
+    
+
+</script>
+<br><br>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,440 @@
+ <!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <title>CIS89C - KrishnaPriya Bhattaram Interiors and Interiors</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style1.css" type="text/css">
+  
+  <style type = "text/css">
+
+table	{
+			margin:auto;
+			border-collapse:collapse;
+			border:1px solid black;
+		}
+	
+	td	{	
+		text-align:center;
+		border:1px solid black;
+		padding:5px;
+		padding-left:15px;
+		font-size:20px;
+	}
+	tr:nth-of-type(even) 	{
+		background-color: plum;
+	}
+  tr:nth-of-type(odd)   {
+	background-color:#ddd;
+  }
+</style>
+
+
+
+</head> 
+ 
+<body> 
+
+
+<script type="text/javascript">
+	function validate() {
+		if(document.form.first.value == "" || document.form.first.value.length == 0) {
+			alert("First name not valid, please input again");
+			document.form.first.focus();
+			document.form.first.select();
+			return;
+		}
+		
+		if(document.form.last.value == "" || document.form.last.value.length == 0) {
+			alert("Last name not valid, please input again");
+			document.form.last.focus();
+			document.form.last.select();
+			return;
+		}
+		
+		if(document.form.address.value == "" || document.form.address.value.length == 0) {
+			alert("Address not valid, please input again");
+			document.form.address.focus();
+			document.form.address.select();
+			return;
+		}
+		
+		if(document.form.city.value == "" || document.form.city.value.length == 0) {
+			alert("City not valid, please input again");
+			document.form.city.focus();
+			document.form.city.select();
+			return;
+		}
+		
+		if(document.form.state.value == "" || document.form.state.value.length == 0) {
+			alert("State not valid, please input again");
+			document.form.state.focus();
+			document.form.state.select();
+			return;
+		}
+		
+		if(!/\d/.test(document.form.zip.value) || (document.form.zip.value.length != 5 && document.form.zip.value.length != 9)) {
+			alert("Zip not valid, please input again" + document.form.zip.length);
+			document.form.zip.focus();
+			document.form.zip.select();
+			return;
+		}
+		
+		if(document.form.phone.value.length == 14) {
+			var phoneStr = document.form.phone.value;
+			//(xxx) xxx-xxxx
+			for(var i = 0; i < document.form.phone.value.length; i++) {
+				var c = phoneStr.charAt(i);
+				
+				if((i == 0 && c != '(') || (i == 4 && c != ')') || (i == 5 && c != ' ') || (i == 9 && c != '-')) {
+					alert("Phone not valid, please input again");
+					document.form.phone.focus();
+					document.form.phone.select();
+					return;
+				}
+				
+				if(((i >= 1 && i <= 3) || (i >= 6 && i <= 8) || (i >= 10 && i <= 13)) && !/\d/.test(c)) {
+					alert("Phone not valid, please input again");
+					document.form.phone.focus();
+					document.form.phone.select();
+					return;
+				}
+			}
+		}
+		else {
+			alert("Phone not valid, please input again");
+			document.form.phone.focus();
+			document.form.phone.select();
+			return;
+		}
+		
+		if(document.form.email.value == "" || document.form.email.value.length == 0) {
+			alert("Email not valid, please input again");
+			document.form.email.focus();
+			document.form.email.select();
+			return;
+		}
+		
+		if(!/\d/.test(document.form.ccnum.value) || document.form.ccnum.value.length != 16) {
+			alert("Credit Card Number not valid, please input again");
+			document.form.ccnum.focus();
+			document.form.ccnum.select();
+			return;
+		}
+
+
+		
+/*		var expireStr = document.form.ccexpire.value;
+		var tok = expireStr.split("/");
+		var m = tok[0];
+		var y = tok[1];
+		var today = new Date();
+		var tM = today.getMonth() + 1;
+		var tY = today.getFullYear();
+		
+		if(!/\d/.test(m) || !/\d/.test(y) || m < 1 || m > 12 || y < tY || (y == tY && m <= tM)) {
+			alert("Expiration date not valid, please input again");
+			document.form.ccexpire.focus();
+			document.form.ccexpire.select();
+			return;
+		}
+*/	
+
+	
+		document.form.submit();
+		document.form.reset();
+	}
+	
+	function updateCheckout() {
+		document.form.c1i1total.value = (document.form.c1i1.value * 179.99).toFixed(2);
+		document.form.c1i2total.value = (document.form.c1i2.value * 219.99).toFixed(2);
+		document.form.c1i3total.value = (document.form.c1i3.value * 519.99).toFixed(2);
+		
+		document.form.c2i1total.value = (document.form.c2i1.value * 671.99).toFixed(2);
+		document.form.c2i2total.value = (document.form.c2i2.value * 84.99).toFixed(2);
+		document.form.c2i3total.value = (document.form.c2i3.value * 1199.99).toFixed(2);
+		
+		document.form.c3i1total.value = (document.form.c3i1.value * 79.99).toFixed(2);
+		document.form.c3i2total.value = (document.form.c3i2.value * 854.99).toFixed(2);
+		document.form.c3i3total.value = (document.form.c3i3.value * 2199.99).toFixed(2);
+		
+		document.form.c1sub.value = (parseFloat(document.form.c1i1total.value) + parseFloat(document.form.c1i2total.value) + parseFloat(document.form.c1i3total.value)).toFixed(2);
+		document.form.c2sub.value = (parseFloat(document.form.c2i1total.value) + parseFloat(document.form.c2i2total.value) + parseFloat(document.form.c2i3total.value)).toFixed(2);
+		document.form.c3sub.value = (parseFloat(document.form.c3i1total.value) + parseFloat(document.form.c3i2total.value) + parseFloat(document.form.c3i3total.value)).toFixed(2);
+		
+		document.form.total.value = (parseFloat(document.form.c1sub.value) + parseFloat(document.form.c2sub.value) + parseFloat(document.form.c3sub.value)).toFixed(2);
+		document.form.tax.value = (document.form.total.value * (8.25 / 100)).toFixed(2);
+		
+		document.form.afterTax.value = (parseFloat(document.form.total.value) + parseFloat(document.form.tax.value)).toFixed(2);
+		
+		if(parseFloat(document.form.afterTax.value) != 0.0)
+			document.form.sum.value = (parseFloat(document.form.afterTax.value) + parseFloat(document.form.sh.value)).toFixed(2);
+		else
+			document.form.sum.value = "0.00";
+	}
+</script>
+
+<header>
+
+
+
+  <h1> Interiors                 Interiors</h1>
+  
+  <h2  Hi   </h2>
+  <nav id="navigation">
+    <a href="index.html">Home</a> |
+    <a href="services.html">Customer Service</a> |
+    <a href="product.html">Product Info</a> |
+    <a href="prodcat.html">Product Catalog</a> |
+<a href="employment.html">Employment</a>  |
+<a href="whnew.html">What's NEW </a>  |
+    <a href="story.html">About Us</a> |
+    
+<a href="faqs.html">FAQs</a> |
+<a href="order.html">ORDER FORM</a> |
+    <a href="contact.html">Contact Us</a> 
+  </nav>
+
+
+</header>
+
+ <h2>Fill out your information for shipping  </h2>
+      <form name="form" action="http://voyager.deanza.edu/~hso/cgi-bin/form420.cgi">
+      	<table>
+      		<tr>
+      			<td>First Name:</td>
+      			<td><input type="text" name="first" size="auto" maxlength="140" /></td>
+      			<td>Last Name:</td>
+      			<td colspan="2"><input type="text" name="last" size="43" maxlength="140"  /></td>
+      		</tr>
+      		<tr>
+      			<td>Street:</td>
+      			<td colspan="4"><input type="text" name="address" size="90" maxlength="140"  /></td>
+      		</tr>
+      		<tr>
+      			<td>City:</td>
+      			<td><input type="text" name="city" size="auto" maxlength="140"  /></td>
+      			<td>State:</td>
+				<td colspan="2">
+<select name="state">
+
+<option value="AL">ALABAMA
+<option value="AK">ALASKA
+<option value="AZ">ARIZONA
+<option value="AR">ARKANSAS
+<option value="CA">CALIFORNIA
+<option value="CO">COLORADO
+<option value="CT">CONNECTICUT
+<option value="DE">DELAWARE
+<option value="FL">FLORIDA
+<option value="GA">GEORGIA
+<option value="HI">HAWAII
+<option value="ID">IDAHO
+<option value="IL">ILLINOIS
+<option value="IN">INDIANA
+<option value="IA">IOWA
+<option value="KS">KANSAS
+<option value="KY">KENTUCKY
+<option value="LA">LOUISIANA
+<option value="ME">MAINE
+<option value="MD">MARYLAND
+<option value="MA">MASSACHUSETTS
+<option value="MI">MICHIGAN
+<option value="MN">MINNESOTA
+<option value="MS">MISSISSIPPI
+<option value="MO">MISSOURI
+<option value="MT">MONTANA
+<option value="NE">NEBRASKA
+<option value="NV">NEVADA
+<option value="NH">NEW HAMPSHIRE
+<option value="NJ">NEW JERSEY
+<option value="NM">NEW MEXICO
+<option value="NY">NEW YORK
+<option value="NC">NORTH CAROLINA
+<option value="ND">NORTH DAKOTA
+<option value="OH">OHIO
+<option value="OK">OKLAHOMA
+<option value="OR">OREGON
+<option value="PA">PENNSYLVANIA
+<option value="RI">RHODE ISLAND
+<option value="SC">SOUTH CAROLINA
+<option value="SD">SOUTH DAKOTA
+<option value="TN">TENNESSEE
+<option value="TX">TEXAS
+<option value="UT">UTAH
+<option value="VT">VERMONT
+<option value="VA">VIRGINIA
+<option value="WA">WASHINGTON
+<option value="DC">WASHINGTON, D.C.
+<option value="WV">WEST VIRGINIA
+<option value="WI">WISCONSIN
+<option value="WY">WYOMING
+</select>
+</td>
+      			
+      		</tr>
+      		<tr>
+      			<td>Zip:</td>
+      			<td><input type="text" name="zip" size="auto" maxlength="9"  /></td>
+      			<td>Phone:</td>
+      			<td colspan="2"><input type="text" name="phone" value="(xxx) xxx-xxxx" size="43" maxlength="15"  /></td>
+      		</tr>
+      		<tr>
+      			<td>EMail:</td>
+      			<td colspan="4"><input type="text" name="email" size="90" maxlength="140"  /></td>
+      		</tr>
+      		<tr>
+      			<td>Credit Card#:</td>
+      			<td><input type="text" name="ccnum" size="auto" maxlength="140"  /></td>
+      			<td><select name="cctype">
+      					<option>VISA</option>
+      					<option>Master</option>
+      					<option>American Express</option>
+      					<option>Discovery</option>
+      				</select>
+      			</td>
+      			<td>Expiration Date:</td>
+				
+				<script>
+ //     			<td><input type="text" name="ccexpire" size="auto" maxlength="140" /></td>
+				</script>
+				
+                
+			    
+                <td><select name="ccmo" id="ccmo" size="1"><option value="01">JAN(01)</option><option value="02">FEB(02)
+				</option><option value="03">MAR(03)</option><option value="04">APR(04)</option><option value="05">MAY(05)</option>
+				<option value="06">JUN(06)</option><option value="07">JUL(07)</option><option value="08">AUG(08)</option>
+				<option value="09">SEP(09)</option><option value="10">OCT(10)</option><option value="11">NOV(11)</option>
+				<option value="12">DEC(12)</option></select> 
+				<select name="ccyr" id="ccyr" size="1"><option value="12" >2012</option><option value="13" >2013</option><option value="14" >2014</option>
+				<option value="15" >2015</option><option value="16" >2016</option><option value="17" >2017</option><option value="18" >2018</option>
+				<option value="19" >2019</option><option value="20" >2020</option><option value="21" >2021</option></select>
+		        </td>
+      		</tr>
+      		<tr>
+      			<td rowspan="3">Comment:</td>
+      			<td colspan="4"><textarea name="comment" cols="67">Please write your comments here...</textarea></td>
+      			<input type="hidden" name="myemail" value="bkpsg1@gmail.com"/>
+      		</tr>
+      	</table>
+		
+		<br><br><br>
+<h2>Order  Form</h2>
+<br>		
+		<table>
+      		<tr>
+      			<td>Category</td>
+      			<td>Description</td>
+      			<td>Unit Price</td>
+      			<td>Quantity</td>
+      			<td>Total Price</td>
+      		</tr>
+      		<tr>
+      			<td rowspan="3">Chairs</td>
+      			<td>Plastic Chair</td>
+      			<td>$179.99</td>
+      			<td><input type="text" name="c1i1" value="0" onchange="updateCheckout()" size="auto" maxlength="9" /></td>
+      			<td><input type="text" name="c1i1total" value="0.00" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td>Wooden Chair</td>
+      			<td>$219.99</td>
+      			<td><input type="text" name="c1i2" value="0" onchange="updateCheckout()" size="auto" maxlength="9" /></td>
+      			<td><input type="text" name="c1i2total" value="0.00" size="auto" maxlength="9"disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td>Leather Chair</td>
+      			<td>$519.99</td>
+      			<td><input type="text" name="c1i3" value="0" onchange="updateCheckout()" size="auto" maxlength="9" /></td>
+      			<td><input type="text" name="c1i3total" value="0.00" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td colspan="4">Subtotal $</td>
+      			<td><input type="text" name="c1sub" value="0.00" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td rowspan="3">Tables</td>
+      			<td>Wooden Table</td>
+      			<td>$679.99</td>
+      			<td><input type="text" name="c2i1" value="0" onchange="updateCheckout()" size="auto" maxlength="9" /></td>
+      			<td><input type="text" name="c2i1total" value="0.00" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td>Plastic kids Table</td>
+      			<td>$84.99</td>
+      			<td><input type="text" name="c2i2" value="0" onchange="updateCheckout()" size="auto" maxlength="9" /></td>
+      			<td><input type="text" name="c2i2total" value="0.00" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td>Glass Top Table</td>
+      			<td>$1199.99</td>
+      			<td><input type="text" name="c2i3" value="0" onchange="updateCheckout()" size="auto" maxlength="9" /></td>
+      			<td><input type="text" name="c2i3total" value="0.00" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td colspan="4">Subtotal $</td>
+      			<td><input type="text" name="c2sub" value="0.00" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td rowspan="3">Shelves & TV Stand</td>
+      			<td>Book Shelf</td>
+      			<td>$79.99</td>
+      			<td><input type="text" name="c3i1" value="0" onchange="updateCheckout()" size="auto" maxlength="9" /></td>
+      			<td><input type="text" name="c3i1total" value="0.00" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td>TV Stand</td>
+      			<td>$854.99</td>
+      			<td><input type="text" name="c3i2" value="0" onchange="updateCheckout()" size="auto" maxlength="9" /></td>
+      			<td><input type="text" name="c3i2total" value="0.00" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td>Shelf & TV Stand </td>
+      			<td>$2199.99</td>
+      			<td><input type="text" name="c3i3" value="0" onchange="updateCheckout()" size="auto" maxlength="9" /></td>
+      			<td><input type="text" name="c3i3total" value="0.00" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td colspan="4">Subtotal $</td>
+      			<td><input type="text" name="c3sub" value="0.00" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td colspan="4">Total $</td>
+      			<td><input type="text" name="total" value="0.00" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td colspan="4">Sales Tax (8.25%) $</td>
+      			<td><input type="text" name="tax" value="0.00" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td colspan="4">Total $</td>
+      			<td><input type="text" name="afterTax" value="0.00" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td colspan="4">Shipping and Handling $</td>
+      			<td><input type="text" name="sh" value="89.99" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td colspan="4">Grand Total $</td>
+      			<td><input type="text" name="sum" value="0.00" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      	</table>
+		
+		
+		
+      	
+		<br><br>
+      		<input type="button" value="Submit" onclick="validate()"/>
+      		<input type="reset" value="Reset" />
+      </form>
+	  
+	  <br><br><br>
+	  
+	  
+	
+
+
+	  
+	  
+	  </body>
+	  
+	  </html>

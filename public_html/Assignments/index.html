@@ -1,0 +1,412 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <title>CIS89C - KrishnaPriya Bhattaram Interiors and Interiors</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style1.css" type="text/css">
+  
+  <style type = "text/css">
+  
+ #clockContainer{
+	margin: 50px auto 30px auto;
+	box-shadow: 5px 5px 5px #333;
+	-moz-box-shadow: 5px 5px 5px #333;
+	-webkit-box-shadow: 5px 5px 5px #333;
+	border:1px solid black;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+	width: 800px;
+	text-align: center;
+	font-family: Comic Sans MS, Arial, Verdana;
+	position: relative;
+}
+
+   #frame{width:100px;height:30px;border-width:2px;}
+
+   #imgbox {
+	width: 300px;
+	height: 200px;
+	border: ridge maroon;
+}
+ 
+table	{
+			margin:auto;
+			border-collapse:collapse;
+			border:1px solid black;
+		}
+	
+	td	{	
+		text-align:center;
+		border:1px solid black;
+		padding:5px;
+		padding-left:15px;
+		font-size:20px;
+	}
+	tr:nth-of-type(even) 	{
+		background-color: plum;
+	}
+  tr:nth-of-type(odd)   {
+	background-color:#ddd;
+  }
+</style>
+<script type="text/javascript">
+	function updateTime()
+	{
+		var dayhalf;
+		var td = new Date();
+		var hrs = td.getHours();
+		var min = td.getMinutes();
+		var sec = td.getSeconds();
+		
+		if ( min < 10 ){min = "0"+min;}
+		if (sec < 10 ){sec = "0"+sec;}
+		if (hrs < 12 )	{dayhalf="A.M";}
+		else { dayhalf="P.M";}
+		if (hrs > 12){hrs = hrs - 12;}
+		if (hrs == 0){hrs = 12;} 
+		var timeString = hrs+" : "+min+"  :  "+sec+"    "+dayhalf;
+		var timeplace = document.getElementById("time");
+//		timeplace.childNodes[0].nodeValue = timeString;
+		timeplace.innerHTML = timeString;
+
+		setTimeout("updateTime()",1000);
+	}
+	var backcolors = new Array("#F0FFFF","#FFF8DC","#c2f1c6","#F0F8FF");
+	var quotes = new Array();
+	quotes.push("Life can only be understood backwards; but it must be lived forwards.");
+	quotes.push("Be the change that you wish to see in the world.");
+	quotes.push("The only source of knowledge is experience." );
+	quotes.push("A sense of humor is a major defense against minor troubles.");
+	quotes.push("A successful man is one who makes more money than his wife can spend. A successful woman is one who can find such a man.");
+	quotes.push("One good thing about music, when it hits you, you feel no pain.");
+	quotes.push("Music was my refuge. I could crawl into the space between the notes and curl my back to loneliness.");
+	quotes.push("Forgiveness is the fragrance that the violet sheds on the heel that has crushed it.");
+    quotes.push("We all have big changes in our lives that are more or less a second chance.");
+    quotes.push("Human beings, by changing the inner attitudes of their minds, can change the outer aspects of their lives.");
+	
+	function displayQuote()
+			{
+				var q1 = Math.floor(Math.random()*quotes.length);
+				var quoteplace = document.getElementById("quotepos");
+//				quoteplace.childNodes[0].nodeValue = "\"" + quotes[q1] + "\"";
+				quoteplace.innerHTML = "\"" + quotes[q1] + "\"";
+
+			}
+	function greet()
+	{
+		var td = new Date();
+		var hrs = td.getHours();
+		var hf = Math.floor(parseInt(hrs) / 6);
+		document.body.style.backgroundColor=backcolors[hf];
+			switch(hf)
+				{
+					case 0:
+						g1=document.getElementById("greetpos");
+//						g1.childNodes[0].nodeValue = "What are you doing that early?";
+						g1.innerHTML = "What are you doing that early?";
+
+						break;
+					case 1:
+						g1=document.getElementById("greetpos");
+//						g1.childNodes[0].nodeValue = "Good Morning!";
+						g1.innerHTML = "Good Morning!";
+
+						break;
+					case 2:
+						g1=document.getElementById("greetpos");
+//						g1.childNodes[0].nodeValue = "Good Afternoon!";
+						g1.innerHTML = "Good Afternoon!";
+
+						break;
+					case 3:
+						g1=document.getElementById("greetpos");
+//						g1.childNodes[0].nodeValue = "Good Evening!";
+						g1.innerHTML = "Good Evening!";
+
+						break;
+					default:
+						g1=document.getElementById("greetpos");
+						g1.childNodes[0].nodeValue = "What time it is ?....!";
+				}
+	}
+			
+		var months = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+		var month_days = new Array("31","28","31","30","31","30","31","31","30","31","30","31");
+		var days = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+			
+			function displayCalendar()
+			{
+				var td = new Date();
+				var day = td.getDate();
+				var weekday = td.getDay();
+				var month = td.getMonth();
+				var year = td.getFullYear();
+				
+				
+				if (year % 400 == 0)
+					month_days[1]++;
+				else 
+				{
+					if (year % 100 != 0)
+					{
+						if (year % 4 == 0)
+							month_days[1]++;
+					}
+				}
+				
+				var startday = new Date(months[month] + " " + 1 + ", " + year);
+				stpoint = startday.getDay();
+				document.write("<table >");
+				document.write("<tr><td  colspan=10 >" + months[month] + " " + year	+ "</td></tr>");
+				document.write("<tr>");
+				document.write("<td >Sun</td>");
+				document.write("<td >Mon</td>");
+				document.write("<td >Tue</td>");
+				document.write("<td>Wed</td>");
+				document.write("<td >Thu</td>");
+				document.write("<td >Fri</td>");
+				document.write("<td>Sat</td>");
+				document.write("</tr>");
+				
+				
+				document.write("<tr>");
+				for (i=0;i<stpoint;i++) {
+					document.write("<td>&nbsp;</td>");
+				}
+				c=1;
+				while (c <= month_days[month]) 
+				{
+					for (b = stpoint;b<7;b++) 
+					{
+						if (c==day) {
+							document.write("<td style='color: white; background-color: #77CCEE'>");
+							document.write(c);
+						}
+						else {
+							document.write("<td>");
+							if (c <= month_days[month]) {
+								document.write(c);
+							}
+							else {document.write("&nbsp;");}
+						}
+						document.write("</td>");
+						c++;
+					}
+					document.write("</tr>");
+					document.write("<tr>");
+					stpoint = 0;
+				}
+				document.write("</table>");
+			}
+		
+</script>
+  
+  
+</head>
+
+<body bgcolor="LightSteelBlue">
+
+<script>
+
+function Ads(banner,url,id){
+this.banner = banner;
+this.url = url;
+this.id = id;
+}
+
+var google = new Ads("google.jpg", "http://www.google.com/",2450780 );
+var cnn = new Ads("cnn.jpg", "http://www.cnn.com/",2450780);
+var pbs = new Ads("pbs.png", "http://www.pbs.org/",2450780 );
+var fb = new Ads("fb.jpg", "http://www.facebook.com/",2450780 );
+var twtr=new Ads("twit.png","http://www.twitter.com/",2450780);
+var ads = new Array(google, cnn, pbs, fb,twtr);
+var counter = 0;
+
+
+function updateAds() {
+		counter = Math.round(Math.random() * 4);
+
+		document.form.action = ads[counter].url;
+		document.form.updateID.value = ads[counter].id;
+		document.getElementById("imgbox").src = ads[counter].banner;
+                setTimeout('updateAds()', 5 * 1000);
+		
+}
+
+/*
+var CookieUtil = {
+
+ set:function(name, value, expires, path, domain, secure) {
+        var cookieText = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+        if(expires instanceof Date) 
+        	cookieText += "; expires=" + expires.toGMTString();
+
+		if(path) 
+        	cookieText += "; path=" + path;
+
+		if(domain) 
+        	cookieText += "; domain=" + domain;
+        	
+		if(secure) 
+        	cookieText += "; secure";
+        	
+    	document.cookie = cookieText;
+	},
+get: function(name) {
+		var cookieName = encodeURIComponent(name) + "=",
+		cookieStart = document.cookie.indexOf(cookieName),
+		cookieValue = null,
+		cookieEnd;
+
+		if(cookieStart > -1) {
+			cookieEnd = document.cookie.indexOf(";", cookieStart);
+			
+			if(cookieEnd == -1)
+            	cookieEnd = document.cookie.length;
+        
+			cookieValue = decodeURIComponent
+			(document.cookie.substring(cookieStart + cookieName.length, cookieEnd));
+		}
+
+		return cookieValue;
+   }
+}
+				
+
+*/
+
+
+
+
+</script>
+
+
+<p id="frame">
+<form name="form" target="_blank">
+<input type="hidden" name="updateID" value="hi" />
+<input type="image" id="imgbox" />
+</form>
+
+<script>
+updateAds();
+</script>
+
+<header>
+
+
+
+  <h1> Interiors                 Interiors</h1>
+  
+  <h2  Hi   </h2>
+  <nav id="navigation">
+    <a href="index.html">Home</a> |
+    <a href="services.html">Customer Service</a> |
+    <a href="product.html">Product Info</a> |
+    <a href="prodcat.html">Product Catalog</a> |
+<a href="employment.html">Employment</a>  |
+<a href="whnew.html">What's NEW </a>  |
+    <a href="story.html">About Us</a> |
+    <a href="faqs.html">FAQs</a> |
+<a href="order.html">ORDER FORM</a> |
+    <a href="contact.html">Contact Us</a> 
+  </nav>
+
+
+</header>
+ <div id="time" style="text-align:center; font-size:30px;">&nbsp;<br /><br />
+</div>
+
+<div id="greetpos" style="text-align:center; font-size:30px;">&nbsp;<br /><br />
+</div>
+
+<div id="quotepos" style="text-align:center; font-size:30px;">&nbsp;<br />
+</div>
+<br />
+
+<script type="text/javascript">
+updateTime();
+greet();
+displayQuote();
+displayCalendar();
+</script>
+
+
+<div id="clockContainer">
+<br><br>
+</div>
+<script type="text/javascript">		
+	
+
+	var div = document.getElementById("clockContainer");
+	div.style.backgroundColor = "turquoise";
+	div.innerHTML = "<span id='time'> </span> ";
+	div.innerHTML += " <span id='greeting'> </span><br><br>";
+
+	
+	updateCookie();
+		  		
+ 
+
+	
+	function set(name, value, expires, path, domain, secure) {
+        var cookieText = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+        if(expires instanceof Date) 
+        	cookieText += "; expires=" + expires.toGMTString();
+
+		if(path) 
+        	cookieText += "; path=" + path;
+
+		if(domain) 
+        	cookieText += "; domain=" + domain;
+        	
+		if(secure) 
+        	cookieText += "; secure";
+        	
+    	document.cookie = cookieText;
+	}
+		
+	function get(name) {
+		var cookieName = encodeURIComponent(name) + "=",
+		cookieStart = document.cookie.indexOf(cookieName),
+		cookieValue = null,
+		cookieEnd;
+
+		if(cookieStart > -1) {
+			cookieEnd = document.cookie.indexOf(";", cookieStart);
+			
+			if(cookieEnd == -1)
+            	cookieEnd = document.cookie.length;
+        
+			cookieValue = decodeURIComponent
+			(document.cookie.substring(cookieStart + cookieName.length, cookieEnd));
+		}
+
+		return cookieValue;
+	}
+
+	function updateCookie() {			
+		var dateInfo = "";
+		var currentTime = new Date();
+	
+		if(get("int") == null) 
+			dateInfo = "";
+		else 
+			dateInfo = get("int");
+		
+		set("int", currentTime.toString());
+		
+		document.getElementById("clockContainer").innerHTML += "Last time visited was..." + dateInfo + "<br><br>";
+	}
+	
+	</script>
+
+    <h2>Choose a design for your home or business ! </h2>
+
+<img src="furn1.jpeg">
+
+
+</body>
+</html>

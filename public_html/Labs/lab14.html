@@ -1,0 +1,183 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>LAB14 CIS89C:Krishnapriya Bhattaram</title>
+  <meta charset="utf-8">
+  
+<style>
+#wrapper {
+		width: 50%;
+		height: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		background-color: lavender;
+		border: 10px purple;
+		}
+#leftcolumn {
+		float: left;
+			margin-left: 80px;	
+text-align:center;
+width:600px;
+height:400px;
+-webkit-border-radius: 35px 35px 35px 35px;
+-moz-border-radius: 35px 35px 35px 35px;
+border-radius: 35px 35px 35px 35px;
+background:rgba(45,88,227,0.5);
+-webkit-box-shadow: #83A3B3 27px 27px 27px;-moz-box-shadow: #83A3B3 27px 27px 27px; box-shadow: #83A3B3 27px 27px 27px;
+
+		}
+
+#rightcolumn {
+		margin-left: 650px;
+		
+text-align:center;
+width:500px;
+height:400px;
+-webkit-border-radius: 35px 39px 34px 40px;
+-moz-border-radius: 35px 39px 34px 40px;
+border-radius: 35px 39px 34px 40px;
+background:rgba(45,88,227,0.5);
+-webkit-box-shadow: #83A3B3 27px 27px 27px;-moz-box-shadow: #83A3B3 27px 27px 27px; box-shadow: #83A3B3 27px 27px 27px;
+
+		}
+
+
+
+</style>
+</head>
+<body bgcolor="lavender" >
+<div style="text-align: center;">
+
+<h1> Krishnapriya Bhattaram CIS89C LAB14 </h1><br><br>
+
+<script>
+var m = prompt("What month were you born in?", "6");
+    var m1 = m-1;
+	var d = prompt("What day were you born on?", "3");
+	var y = prompt("What year were you born in?", "2011");
+	var one_day=1000*60*60*24; 
+	var birth = new Date(y, m1, d);
+//	document.write(birth+"<br>");
+	var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+	var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+	
+	var today = new Date();
+	diff = (today - birth);
+//	document.write("<br>"+diff+"<br>");
+	diffd = Math.floor((today - birth)/86400000);
+	diffyears = Math.floor(diffd/365);
+	diffh1 = (diff % 86400000) / 3600000;
+//	document.write(diffh1);
+	diffh = Math.floor((diff % 86400000) / 3600000);
+	diffm = Math.floor(((diff % 86400000) % 3600000) / 60000);
+	diffs = Math.floor((((diff % 86400000) % 3600000) % 60000) / 1000);
+//	document.write(diffd+"<br>"+diffyears+"<br>"+diffh+"<br>"+diffm+"<br>"+diffs+"<br>");
+	
+	var dateString = (today.toLocaleDateString() + " " + today.toLocaleTimeString());
+//	document.write(today.toLocalDateString());
+	var currentY = today.getFullYear();
+	var currentM = today.getMonth()+1;
+	var currentD = today.getDate();
+//	document.write(currentY+", "+currentM+", "+currentD);
+	var nextBirthday;
+	
+	if((currentM - m > 0) || (currentM - m == 0 && currentD - d >= 0))
+		nextBirthday = new Date(currentY + 1, m - 1, d);
+	else
+		nextBirthday = new Date(currentY, m - 1, d);
+    var nextb = nextBirthday;
+//	document.write(nextb+"<br>");
+	diffnb = (nextb - today);
+	diffnd = Math.ceil((diffnb)/86400000);
+	diffnh = Math.floor((diffnb % 86400000) / 3600000);
+	diffnm = Math.floor(((diffnb % 86400000) % 3600000) / 60000);
+	diffns = Math.floor((((diffnb % 86400000) % 3600000) % 60000) / 1000);
+	
+	
+	
+</script>
+
+<section id="wrapper">
+
+<section id="leftcolumn">
+
+<script>
+
+document.write("<h1>My Age</h1>");
+document.write("<h2>");
+//document.write("today is " + today );
+document.write("<br>Today is "+dateString);
+document.write("<br><br>I was born on "+months[m1]+", "+d+", "+y+". ");
+m = m.toString();
+if(m.length < 2)
+m = "0"+m;
+d = d.toString();
+if(d.length < 2)
+d = "0"+d;
+var bdate = m + '/' + d + '/' + y;
+document.write("("+bdate+")");
+
+//Third sentence
+diffyn = diffyears+1;
+diffdn = diffd - 365;
+document.write("<br><br>Iam "+diffyears+" years old and I will turn "+ diffyn+" in"+"<br>");
+document.write(diffnd+" days, "+diffnh+" hours, "+diffnm+" minutes, "+diffns+" seconds.");
+//document.write("<br>"+nextBirthday+"<br>");
+
+//Fourth sentence
+
+document.write("<br><br>I have been alive for <br>");
+document.write(diffd+" days, "+diffh+" hours, "+diffm+" minutes, "+diffs+" seconds.");
+/*
+t1="06/03/20012" ;
+
+t2="06/03/20013";
+t3 = bdate;
+ document.write("<br>"+t3+"<br>");
+   //Total time for one day
+        var one_day=1000*60*60*24; 
+//Here we need to split the inputed dates to convert them into standard format
+
+        var x=t3.split("/");     
+        var y=t2.split("/");
+  //date format(Fullyear,month,date) 
+
+        var date1=new Date(x[2],(x[1]-1),x[0]);
+  
+        var date2=new Date(y[2],(y[1]-1),y[0])
+        var month1=x[1]-1;
+        var month2=y[1]-1;
+        
+        //Calculate difference between the two dates, and convert to days
+               
+        Diffd=Math.ceil((date2.getTime()-date1.getTime())/(one_day)); 
+		
+//Diff gives the diffrence between the two dates.
+//document.write("<br>"+Diffd+"<br>");
+*/
+//Another program to give diff 
+var future = new Date("06/03/2011");
+var today=new Date();
+ 
+var weeks = 1000 * 60 * 60 * 24 * 7;
+var days = 1000 * 60 * 60 * 24;
+var hours = 1000 * 60 * 60;
+var mins = 1000 * 60;
+var secs = 1000;
+ 
+var diffWeeks = Math.ceil((today.getTime()-future.getTime())/(weeks));
+var diffd = Math.ceil((today.getTime()-future.getTime())/(days));
+var diffh = Math.ceil((today.getTime()-future.getTime())/(hours));
+var diffm = Math.ceil((today.getTime()-future.getTime())/(mins));
+var diffs = Math.ceil((today.getTime()-future.getTime())/(secs));
+
+//document.write("<br>"+diffd+"<br>"+diffh/24+", "+diffm+", "+diffs);
+document.write("</h2>");
+</script>
+
+</section>
+
+</section>
+</div>
+</body>
+</html>

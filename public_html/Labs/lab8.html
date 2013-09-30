@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CIS89C: Client-Side Programming with JavaScript   LAB8</title>
+<meta charset="utf-8">
+</head>
+<body>
+
+<div style="text-align: center;font-family:verdana;color:red;">
+<br><br>
+<script type="text/javascript">
+	
+
+
+	
+	function openMovieWin() {
+		titleWindow=window.open("http://www.imdb.com/title/tt0264464","MovieWin","width=900,height=500,top=200,left=600,resizable");
+	}
+	
+	function openActorWin() {
+		actorWindow=window.open('http://www.imdb.com/name/nm0000158/','ActorWin','width=600,height=500,top=300,left=500,resizable');
+	}
+	
+	function closeTitle() {
+		titleWindow.close();
+	}
+
+	function closeActor() {
+		actorWindow.close();
+	}
+	
+	
+	myWindow=window.open("","MyWindow","width=600,height=400,top=100,left=100,resizable");	
+	
+	myWindow.document.write("<p><h2>My favorite movie is:</br> Movie: Catch me If you can </br>Actor: Tom Hanks</br></br></h2></p>");
+	
+	myWindow.document.write("<a href='javascript:opener.openMovieWin()'>Click here to See the Movie Title</a><br><br>");
+	myWindow.document.write("<a href='javascript:opener.openActorWin()'>Click here to See the Movie Actor</a><br><br>");
+	myWindow.document.write("<BODY style='background:lavender'>");
+	
+	
+	myWindow.document.write("<a href='javascript:opener.closeTitle()'>Close Movie Title Window</a><br><br>");
+	myWindow.document.write("<a href='javascript:opener.closeActor()'>Close Actor Window</a><br><br>");	
+	myWindow.document.write("<a href='javascript:close()'>Close this Window</a><br>");	
+	
+</script>
+
+
+</div>
+
+</body>
+</html>

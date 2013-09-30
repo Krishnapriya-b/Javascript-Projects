@@ -1,0 +1,66 @@
+body {
+  
+  font-family: Arial, Helvetica, sans-serif;
+  width: 800px;
+  text-align:center;
+  background-color: tealblue;
+  margin: 0px auto; 
+  display:block; 
+}
+
+/* Link colors ----------------*/
+a:link {
+  color: purple;
+}
+a:hover {
+  color: blue;
+}
+/*a:visited {
+  color: green;
+} */
+
+#h1 {
+  color: #FF0000;
+  font-size: 36px;
+}
+/* Main -------------------*/
+#main {
+	width: 600px;
+	align: center;
+	margin: 0px auto;
+ 	 display:block;
+
+}
+/* HEADERS ––––––––––––––––––––– */
+h1 {
+	position:relative;
+	font-family: Futura, Verdana, serif;
+	font-size:36px;
+
+	height:80px;
+      	 padding-left:0px;
+	padding-top:25px;
+	margin: 0px auto;
+  	display:block;
+}
+h2 {
+	position:relative;
+	top:10px;
+	font-size:22px;
+	text-align:center;
+		padding:22px 0;
+}
+h4 {
+padding: 0px 0;
+border-style: 1px solid #FF0000;
+}
+
+#divcenter{
+margin: 0px auto;
+display:block;
+
+}
+
+p {
+  text-align:left;
+}

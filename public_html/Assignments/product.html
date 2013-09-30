@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <title>CIS89C - KrishnaPriya Bhattaram Interiors and Interiors</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style1.css" type="text/css">
+  
+<script type="text/javascript">
+	function selectProduct() {
+       fname = prompt("Please enter your first name:", "Krishna");
+	lname = prompt("Please enter your last name:", "Priya");
+	alert("Welcome "+fname+" "+lname+" to the Product Information page of Interiors!");
+       
+       res = prompt("Hi "+fname+" "+lname+" please enter a number to view the product \nEnter 1 for chair\nEnter 2 for coffetable\nEnter 3 for bookshelf","1");
+//       alert("You entered: " +res+ " ");
+	}
+
+</script>
+<br><br>
+<script>
+
+	function prodInfo(image, info) {
+		this.image = image;
+		this.info = info;
+		this.show = function () {
+			document.write("Hello ",fname,"  You chose : ",this.info,"<br><br>");
+			document.write("<img src=" + this.image +   " > <br><br>");
+			document.write(this.info+"</br>","Nice Choice !");		
+		}
+	}
+
+
+function invalidInput(res) { 
+	alert("You entered "+res+" which is not between 1 and 3.\nPlease try entering number 1 or 2 or 3 again!");
+	res = prompt("Hi "+fname+" "+lname+" please enter a number to view the product \nEnter 1 for chair\nEnter 2 for coffetable\nEnter 3 for bookshelf","1");
+
+	selection(res);
+}
+
+function function1() {
+	var prod1 = new prodInfo("chair.jpeg", "A nice comfortable chair"); 
+	prod1.show(prod1); 
+}
+
+function function2() {
+	var prod2 = new prodInfo("coffeetable.jpeg", "A stylish coffee table"); 
+	prod2.show(prod2); 
+}
+
+function function3() {
+	var prod3 = new prodInfo("bookshelf.jpeg", "A spacious modern bookshelf");  
+	prod3.show(prod3); 
+}
+
+
+function selection(res) {
+	 
+	switch(res)
+	{
+	case "1":
+		function1();
+		break;
+	case "2":
+		function2();
+		break;
+	case "3":
+		function3();
+		break;
+	default:
+				
+		invalidInput(res);
+	}
+ }
+
+	
+
+</script>	
+
+<script type="text/javascript">
+	  selectProduct();
+	  selection(res);
+	  </script>
+
+</head>
+
+<body bgcolor="LightSteelBlue">
+
+
+
+<header>
+
+  <h3> Interiors    Product Information             </h3>
+   <h3 Hi   </h3>
+  <nav id="navigation">
+    <a href="index.html">Home</a> |
+    <a href="services.html">Customer Service</a> |
+    <a href="product.html">Product Info</a> |
+    <a href="prodcat.html">Product Catalog</a> |
+<a href="employment.html">Employment</a>  |
+<a href="whnew.html">What's NEW </a>  |
+    <a href="story.html">About Us</a> |
+   
+    <a href="faqs.html">FAQs</a> |
+<a href="order.html">ORDER FORM</a> |
+    <a href="contact.html">Contact Us</a> 
+  </nav>
+
+
+</header>
+
+
+   
+
+</body>
+</html>

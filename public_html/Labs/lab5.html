@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CIS89C: Client-Side Programming with JavaScript Lab5</title>
+<meta charset="utf-8">
+
+<script type="text/javascript">
+
+function movie(genre, title, rating, price) {
+this.genre = genre;
+this.title = title;
+this.rating = rating;
+this.price = price;
+
+this.show = function(movie) {
+			document.write("Movie:  "+movie.title+"<br>");
+			document.write("Genre:  "+movie.genre+"<br>");
+			document.write("Rating: "+movie.rating+"<br>");
+			document.write("Price:  "+movie.price+"<br>");
+		}
+
+}
+
+movie1 = new movie("Action/sci-fi", "Starwars: The Phantom Menace", "PG", 11.99);
+
+movie2 = new movie("Sci-fi/Action","Avengers","PG-13",13.99);
+
+movie3 = new movie("Sci-fi/Action","The Amazing Spiderman","PG-13",16.99);
+
+</script>
+</head>
+
+<body bgcolor="lavender">
+<div style="text-align: center;font-family:verdana;color:red;">
+<br><br>
+<h1>DVD Collection</h1>
+<br><br>
+<img src="starwars.jpg"   align="center" width="304" height="228">
+<br>
+<script type="text/javascript">
+
+movie1.show(movie1);
+
+</script>
+<br><br>
+<img src="avengers.jpg"   align="center" width="304" height="228">
+<br>
+<script type="text/javascript">
+
+movie2.show(movie2);
+
+</script>
+<br><br>
+<img src="amazingspider.jpg"   align="center" width="304" height="228">
+<br>
+<script type="text/javascript">
+
+movie3.show(movie3);
+
+</script>
+
+<br><br>
+
+</div>
+</body>
+</html>

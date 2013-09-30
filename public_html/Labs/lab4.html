@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CIS89C: Client-Side Programming with JavaScript Lab4</title>
+<meta charset="utf-8">
+
+<br>
+<br>
+
+<br><br>
+<h2>Function to calculate mileage of a car </h2>
+<br>
+</head>
+
+<body bgcolor='lavender' >
+
+<script type="text/javascript">
+
+function mileage(miles,gallons) 
+{
+var mileage1 = miles / gallons;
+document.write("<h2>Number of Miles: ", miles, "<br>");
+document.write(" Number of gallons: ", gallons, "<br>");
+document.write(" Mileage is ", mileage1, "</h2>");
+}
+var miles = prompt("Please enter the number of Miles","567");
+var gallons = prompt("Please enter the number of gallons","30");
+
+mileage(miles, gallons);
+
+</script>
+
+</body>
+</html>
