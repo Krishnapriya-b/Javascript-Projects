@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CIS89C - KrishnaPriya Bhattaram - Lab21</title>
+<style type="text/css">
+div {
+	margin: 30px auto 30px auto;
+	text-align:center;
+width:820px;
+height:750px;
+-webkit-border-radius: 35px 35px 35px 35px;
+-moz-border-radius: 35px 35px 35px 35px;
+border-radius: 35px 35px 35px 35px;
+background:rgba(45,88,227,0.5);
+-webkit-box-shadow: #83A3B3 27px 27px 27px;
+-moz-box-shadow: #83A3B3 27px 27px 27px; 
+box-shadow: #83A3B3 27px 27px 27px;
+font-size:20px
+	
+}
+
+#main {
+	cursor:pointer;
+	}
+
+.answer { 
+	cursor:pointer;
+}
+</style>
+</head>
+<body id="main" style="background-color: lavender">
+	<div><br>
+		<dl>
+			<dt id="q1"><b>What is ECMAScript?<br></b><br></dt>
+				<dd id="a1" class="answer"> ECMA-262 is the international standard that current language implementations (JavaScript™, JScript etc.) are based on.
+
+ECMA-262 defines the language Syntax, Types, Keywords, Operators, and built-in objects. The ECMAScript specification is the reference to determine the expected 
+behavior of a program. ECMAScript does not define any host objects, such as document, window, or ActiveXObject.
+
+ECMA-327 defines the Compact Profile of ECMAScript by describing the features from ECMA 262 that may be omitted in some resource-constrained environments. 
+http://www.ecma-international.org/publications/standards/Ecma-327.htm
+
+The most widely supported edition of ECMA-262 is the 3rd edition (1999). There is fair support for this edition in JScript 5.5+ (buggy) and good support 
+JavaScript 1.5.
+
+The term "javascript" is used as a common name for all dialects of ECMAScript. </dd>
+			<dt id="q2"><b>How do you get a page to perform something only on the initial load, 
+			and not when reloaded?<br> Is it done with cookies?<br></b><br></dt>
+				<dd id="a2" class="answer">It can be done using cookies, although a lot of people disable cookies. Another alternative is to have a 
+				frameset with a hidden frame. 
+				You store a variable in the parent frame which says whether the main frame has already been loaded. 
+				Each time the main frames loads it checks the parent frame for the variable value to see whether it should perform the once only code: </dd>
+			<dt id="q3"><b>Can I access a cookie that is created in a different page than the current page?<br></b><br></dt>
+				<dd id="a3" class="answer">Yes. If its in a different directory then you may need to set the path property of the cookie so that it is 
+				high enough in the 
+				directory tree not to prevent a document in one part of the directory tree from being excluded. For example, if you set the path to:
+
+/topdir/dir1
+then files in /topdir/dir2 will not be able to access the cookie. But if you set the path to:
+
+/topdir
+Then files in all sub-directories of topdir will have access. By default the path is set to:
+
+/
+Which means all files on the server have access to the cookie.</dd>
+		</dl>
+	</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script type="text/javascript">
+	$(".answer").hide(1); 
+
+	$("#q1").toggle(function showA1() {$("#a1").fadeIn(1000);}, function hideA1() {$("#a1").fadeOut(1000);}); 
+	$("#q2").toggle(function showA2() {$("#a2").fadeIn(1000);}, function hideA2() {$("#a2").fadeOut(1000);}); 
+	$("#q3").toggle(function showA3() {$("#a3").fadeIn(1000);}, function hideA3() {$("#a3").fadeOut(1000);}); 
+</script>
+</body>
+</html>

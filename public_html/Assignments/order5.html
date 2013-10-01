@@ -1,0 +1,247 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <title>CIS89C - KrishnaPriya Bhattaram Interiors and Interiors</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style1.css" type="text/css">
+  
+  <style type = "text/css">
+
+table	{
+			margin:auto;
+			border-collapse:collapse;
+			border:1px solid black;
+		}
+	
+	td	{	
+		text-align:center;
+		border:1px solid black;
+		padding:5px;
+		padding-left:15px;
+		font-size:20px;
+	}
+	tr:nth-of-type(even) 	{
+		background-color: plum;
+	}
+  tr:nth-of-type(odd)   {
+	background-color:#ddd;
+  }
+</style>
+
+<script type="text/javascript">
+<!--
+
+// This is the check script
+
+function checkit()
+{
+	
+	// First of all, have all the text boxes been filled in?
+	
+	for (i=0;i<4;i++) {
+		var box = document.forms['example'].elements[i];
+		if (!box.value) {
+			alert('You haven\'t filled in ' + box.name + '!');
+			box.focus()
+			return;
+		}
+			}
+
+	</script>
+
+
+
+</head>
+<body>
+<br>
+
+<header>
+
+
+
+  <h1> Interiors                 Interiors</h1>
+  
+  <h2  Hi   </h2>
+  <nav id="navigation">
+    <a href="index.html">Home</a> |
+    <a href="services.html">Customer Service</a> |
+    <a href="product.html">Product Info</a> |
+    <a href="prodcat.html">Product Catalog</a> |
+<a href="employment.html">Employment</a>  |
+<a href="whnew.html">What's NEW </a>  |
+    <a href="story.html">About Us</a> |
+    
+<a href="faqs.html">FAQs</a> |
+<a href="order.html">ORDER FORM</a> |
+    <a href="contact.html">Contact Us</a> 
+  </nav>
+
+
+</header>
+<br><br>
+<form name="example" action="#" onsubmit="checkit(); return false">
+<table class="form">
+<tr>
+<td>Name</td>
+<td><input name="name" /></td>
+</tr>
+
+<tr>
+<td>Address</td>
+<td><input name="address" /></td>
+</tr>
+
+<tr>
+<td>City</td>
+<td><input name="City" /></td>
+</tr>
+
+<tr>
+<td>E-mail</td>
+<td><input name="E-mail" /></td>
+</tr>
+
+<tr>
+<td>Phone Number</td>
+<td><input name="Phone" /></td>
+</tr>
+
+
+
+</table>
+
+<img src = "cclogo.png"/>
+		    
+   			<!-- CC Expiration Date -->
+		    <div style='width:40%; float:left; margin-left:30px;'>
+				
+                	Expiration:
+                
+			    <br />
+                <select name="ccmo" id="ccmo" size="1"><option value="01">JAN(01)</option><option value="02">FEB(02)</option><option value="03">MAR(03)</option><option value="04">APR(04)</option><option value="05">MAY(05)</option><option value="06">JUN(06)</option><option value="07">JUL(07)</option><option value="08">AUG(08)</option><option value="09">SEP(09)</option><option value="10">OCT(10)</option><option value="11">NOV(11)</option><option value="12">DEC(12)</option></select> <select name="ccyr" id="ccyr" size="1"><option value="12" >2012</option><option value="13" >2013</option><option value="14" >2014</option><option value="15" >2015</option><option value="16" >2016</option><option value="17" >2017</option><option value="18" >2018</option><option value="19" >2019</option><option value="20" >2020</option><option value="21" >2021</option></select>
+		    </div>
+	    
+
+	    <div style='width:100%; float:left;margin-top:10px;'>	
+            <div style='width:44%; float:left;'>        
+                
+	                Card Number:
+                
+                <br />
+			    <input type="text" name="ccnum" id="ccnum" style='width:250px;' value='' onkeyup="selectCC(this.value)" />
+		    </div>
+            
+		    <div style='width:40%; float:left; margin-left:5px; '>
+				
+	                Security Code:
+                
+			    <br />
+			    <input style='width:80px;' type='text' name='cvv2' id='cvv2' value='' />
+		    </div>
+			
+			</div>
+<br><br><br>
+
+<table>
+      		<tr>
+      			<td>Category</td>
+      			<td>Description</td>
+      			<td>Unit Price</td>
+      			<td>Quantity</td>
+      			<td>Total Price</td>
+      		</tr>
+      		<tr>
+      			<td rowspan="3">Chairs</td>
+      			<td>Plastic Chair</td>
+      			<td>$179.99</td>
+      			<td><input type="text" name="c1i1" value="0" onchange="updateCheckout()" size="auto" maxlength="9" /></td>
+      			<td><input type="text" name="c1i1total" value="0.00" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td>Wooden Chair</td>
+      			<td>$219.99</td>
+      			<td><input type="text" name="c1i2" value="0" onchange="updateCheckout()" size="auto" maxlength="9" /></td>
+      			<td><input type="text" name="c1i2total" value="0.00" size="auto" maxlength="9"disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td>Leather Chair</td>
+      			<td>$519.99</td>
+      			<td><input type="text" name="c1i3" value="0" onchange="updateCheckout()" size="auto" maxlength="9" /></td>
+      			<td><input type="text" name="c1i3total" value="0.00" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td colspan="4">Subtotal $</td>
+      			<td><input type="text" name="c1sub" value="0.00" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td rowspan="3">Tables</td>
+      			<td>Wooden Table</td>
+      			<td>$679.99</td>
+      			<td><input type="text" name="c2i1" value="0" onchange="updateCheckout()" size="auto" maxlength="9" /></td>
+      			<td><input type="text" name="c2i1total" value="0.00" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td>Plastic kids Table</td>
+      			<td>$84.99</td>
+      			<td><input type="text" name="c2i2" value="0" onchange="updateCheckout()" size="auto" maxlength="9" /></td>
+      			<td><input type="text" name="c2i2total" value="0.00" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td>Glass Top Table</td>
+      			<td>$1199.99</td>
+      			<td><input type="text" name="c2i3" value="0" onchange="updateCheckout()" size="auto" maxlength="9" /></td>
+      			<td><input type="text" name="c2i3total" value="0.00" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td colspan="4">Subtotal $</td>
+      			<td><input type="text" name="c2sub" value="0.00" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td rowspan="3">Shelves & TV Stand</td>
+      			<td>Book Shelf</td>
+      			<td>$79.99</td>
+      			<td><input type="text" name="c3i1" value="0" onchange="updateCheckout()" size="auto" maxlength="9" /></td>
+      			<td><input type="text" name="c3i1total" value="0.00" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td>TV Stand</td>
+      			<td>$854.99</td>
+      			<td><input type="text" name="c3i2" value="0" onchange="updateCheckout()" size="auto" maxlength="9" /></td>
+      			<td><input type="text" name="c3i2total" value="0.00" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td>Shelf & TV Stand </td>
+      			<td>$2199.99</td>
+      			<td><input type="text" name="c3i3" value="0" onchange="updateCheckout()" size="auto" maxlength="9" /></td>
+      			<td><input type="text" name="c3i3total" value="0.00" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td colspan="4">Subtotal $</td>
+      			<td><input type="text" name="c3sub" value="0.00" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td colspan="4">Total $</td>
+      			<td><input type="text" name="total" value="0.00" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td colspan="4">Sales Tax (8.25%) $</td>
+      			<td><input type="text" name="tax" value="0.00" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td colspan="4">Total $</td>
+      			<td><input type="text" name="afterTax" value="0.00" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td colspan="4">Shipping and Handling $</td>
+      			<td><input type="text" name="sh" value="89.99" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      		<tr>
+      			<td colspan="4">Grand Total $</td>
+      			<td><input type="text" name="sum" value="0.00" size="auto" maxlength="9" disabled="disabled" /></td>
+      		</tr>
+      	</table>
+		
+</form>
+</body>
+</html>

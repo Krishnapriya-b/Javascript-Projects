@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <title>CIS89C - KrishnaPriya Bhattaram Interiors and Interiors</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style1.css" type="text/css">
+  
+  <style type="text/css">
+        
+        
+table, td, th
+{
+border:1px solid purple;
+
+border-collapse:collapse;
+
+
+}
+th
+{
+height:30px;
+background-color:grey;
+color:white;
+}
+td
+{
+width:200px;
+height:30px;
+vertical-align:center;
+}
+
+</style>
+
+  
+</head>
+
+<body bgcolor="LightSteelBlue">
+<header>
+
+<img src="furnlogo.jpeg">
+
+  <h1> Interiors                 Interiors</h1>
+  
+  <h2  Hi   </h2>
+    <nav id="navigation">
+    <a href="index.html">Home</a> |
+    <a href="services.html">Customer Service</a> |
+    <a href="product.html">Product Info</a> |
+	<a href="prodcat.html">Product Catalog</a> |
+<a href="employment.html">Employment</a>  |
+<a href="whnew.html">What's NEW </a>  |
+    <a href="story.html">About Us</a> |
+    <a href="faqs.html">FAQs</a> |
+<a href="order.html">ORDER FORM</a> |
+    <a href="contact.html">Contact Us</a> 
+  </nav>
+
+
+</header>
+
+
+<h2> Furniture Catalog </h2>
+
+<script type="text/javascript">
+        
+        function Movie(size, style, color,material, price)
+        {
+            this.size = size;
+            this.style = style;
+            this.color = color;
+	     this.material = material;
+            this.price = price;
+            this.showMovie = showfurn;
+        }
+        function showfurn(){
+	        document.write("<td>" + this.size   + "</td>");	
+            document.write("<td>" + this.style + "</td>");
+            document.write("<td>" + this.color + "</td>");
+            document.write("<td>" + this.material + "</td>");
+            document.write("<td>" + this.price + "</td>");
+        }
+
+        var m1 = new Movie("Large", "Antique", "Beige","Wood", "$1289");    
+        var m2 = new Movie("Medium", "Casual", "Plum","Leather", "$1490");
+        var m3 = new Movie("Small", "Modern", "Black", "Plastic","$1199");
+        
+        var m4 = new Movie("Large", "Antique", "Maple","Wood", "$999");
+        var m5 = new Movie("Medium", "Casual", "Orange","Glass", "$979"); 
+        var m6 = new Movie("Small", "Modern", "Purple","Plastic", "$1099");
+        
+        var m7 = new Movie("Large", "Antique", "Green","Velvet", "$899");
+        var m8 = new Movie("Medium", "Casual", "Blue","Leather", "$999");
+        var m9 = new Movie("Small", "Modern", "Black","Linen", "$1299");
+        
+        movies = new Array();
+        chair = new Array();
+        table = new Array();
+        sofa = new Array();
+        
+        chair.push(m1,m2,m3);
+
+        
+        table.push(m4,m5,m6);
+
+        
+        sofa.push(m7,m8,m9);
+
+        
+        movies.push(chair,table,sofa);
+   
+        
+//		document.write(movies.length);
+//		document.write(movies[0].length);
+//		document.write(movies[1].length);
+		
+        document.write("<table>");
+        document.write("<tr>");
+		document.write("<th>&nbsp</th>");
+		document.write("<th>Size</th>");
+        document.write("<th>Style</th>");
+        document.write("<th>Color</th>");
+        document.write("<th>Material</th>");
+		document.write("<th>Price</th>");
+        document.write("</tr>");
+
+        var i = 0;
+        var j = 0;
+        for (i = 0; i < movies.length; i++){
+		
+		switch (i) {
+		
+			case 0:
+					type = "Chair";
+					break;
+			case 1:
+					type = "Table";
+					break;
+			case 2:
+					type = "Sofa ";
+					break
+			default:
+					document.write("none");
+					break;
+		}
+		
+            
+            for (j = 0; j < movies[i].length; j++){
+			
+				if((i%2) == 0){
+							document.write("<tr bgcolor='lavender'>");
+							}
+				else 
+				{
+                document.write("<tr bgcolor='beige'>");
+				}
+				if (j == 0) {
+				document.write("<th>",type,"</th>");
+				}
+				else {
+				document.write("<td></td>");
+				}
+                movies[i][j].showMovie();
+                document.write("</tr>");
+            }
+//            document.write("</tr>"); 
+        }
+        
+        document.write("</table>");
+        
+        
+        
+
+    </script>
+
+
+   <br><br><br> 
+
+</body>
+</html>

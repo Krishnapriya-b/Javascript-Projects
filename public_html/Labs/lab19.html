@@ -1,0 +1,94 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>LAB19 - KrishnaPriya Bhattaram - CIS89C</title>
+<style type="text/css">
+div {
+	margin: 30px auto 30px auto;
+	box-shadow: 5px 5px 5px #333;
+	-moz-box-shadow: 5px 5px 5px #333;
+	-webkit-box-shadow: 5px 5px 5px #333;
+	border:0px solid black;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+	width: 900px;
+	height: 550px;
+	font-family: Arial;
+	background-color: wheat;
+	text-align: center;
+	padding: 5px 5px 5px 5px;
+}
+
+table {
+	color: black;
+	text-align: left;
+	vertical-align: top;
+	width: 600px;
+	height: 500px;
+}
+
+td {
+	color: black;
+	text-align: left;
+	vertical-align: top;
+	width: 300px;
+	height: 415px;
+}
+
+img {
+	width: 700px;
+	height: 500px;
+	border: blue;
+}
+
+p {
+	color: black;
+}
+
+h2 {
+	color: darkblue;
+}
+
+
+</style>
+</head>
+<body style="background-color: lightblue">
+	<div>
+		<table>
+			<tr>
+				<td>
+					<h2>Travel around the world</h2>
+					<ul>
+						<li id="t1" onmouseover="updateImg('Paris France', img1)" onmouseenter="updateImg('Paris - Eiffel Tower', img1)" onmouseout="updateImg('', imgDefault)">Paris Eiffel Tower</li><br>
+						<li id="t2" onmouseover="updateImg('AGRA India', img2)" onmouseenter="updateImg('Agra - Tajmahal', img2)" onmouseout="updateImg('', imgDefault)">AGRA Tajmahal</li><br>
+						<li id="t3" onmouseover="updateImg('Switzerland Europe', img3)" onmouseenter="updateImg('Switzerland - Farm', img3)" onmouseout="updateImg('', imgDefault)">Switzerland Farm</li><br>
+					</ul>
+					<p id="description"> </p>
+				</td>
+				<td>
+					<img id="travel" src="blank.jpg" />
+				</td>
+			</tr>
+		</table>
+	</div>
+<script type="text/javascript">
+	var img1 = new Image();
+	var img2 = new Image();
+	var img3 = new Image();
+	var imgDefault = new Image();
+	
+	img1.src = "eiffel.jpg";
+	img2.src = "tajmahal.jpg";
+	img3.src = "swiss.jpg";
+	imgDefault.src = "travel.jpg";
+	
+	function updateImg(txt, img) {
+		document.getElementById("travel").src = img.src;
+		document.getElementById("description").innerHTML = txt;
+	}
+</script>
+</body>
+</html>

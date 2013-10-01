@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+
+<head>
+  <title> LAB12</title>
+  
+
+</style>
+  <script type="text/javascript"">
+	function Match(msg, result) {
+		document.write(msg+"<br>");
+		if (result) 
+			document.write("It's a match.<br><br>");
+		else
+			document.write("No match.<br><br>");
+	}		
+  	function regexp() {
+		inputa = new Array("Welcome JavaScript", "5", "=", "#12345.6", "stop") 
+		i = 0;
+		do {
+		document.write("<body bgcolor='lightblue'</body>");
+			var input = prompt("Enter a text (stop to exit) ", inputa[i]);
+			var rexp1 = /[A-za-z0-9_]/;
+
+			var rexp2 = /\D/;
+			var rexp3 = /[A-Z][a-z]+\s/;
+			var rexp4 = /[#]\d{5}\.\d/;
+			var result = new Array(4);
+			
+			result[0] = rexp1.test(input);
+			result[1] = rexp2.test(input);
+			result[2] = rexp3.test(input);
+			result[3] = rexp4.test(input);
+
+			document.write("<h2>The text is: "+input+"</h2>");
+			Match("Match a string that contains at least one character in A-Z, a-z, 0-9 and _",result[0]);
+			Match("Match a string that does not contain a number between 0 and 9",result[1]);
+			Match("Search for an uppercase letter, followed by one or more lowercase letters, followed by a space.",result[2]);
+			Match("Find a #sign, followed by exactly 5 repeating digits, a period, and another digit",result[3]);	
+			
+			i++;
+		} while (input != "stop")
+	}
+	</script>
+</head>
+<body bgcolor="lightblue" onLoad="regexp()">
+	<h2>This is lab for Regular expressions</h2>
+</body>
+</html>

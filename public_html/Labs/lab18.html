@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>KrishnaPriya Bhattaram - Lab 18</title>
+<section align=center>
+<h2>KrishnaPriya Bhattaram LAB18 - Cookies</h2>
+</section>
+
+
+		<style>
+
+
+
+div {
+	margin: 30px auto 30px auto;
+	box-shadow: 5px 5px 5px #333;
+	-moz-box-shadow: 5px 5px 5px #333;
+	-webkit-box-shadow: 5px 5px 5px #333;
+	border:0px solid black;
+	-webkit-border-radius:25px;
+	-moz-border-radius:25px;
+	border-radius:25px;
+	width: 700px;
+	height: 450px;
+	font-family: Arial;
+	background-color: wheat;
+	text-align: center;
+	padding: 5px 5px 5px 5px;
+}
+
+		body{
+			background-color: plum;
+		}
+		</style>
+		<script>
+		var messages = new Array(
+					"First time : Welcome to my page !",
+					"Second time :you again ? ",
+					"Third time : you must be curious",
+					"Fourth time : how r you ?",
+					"Fifth time : Bored huh ?",
+					"Sixth time : Listen to music",
+					"Seventh time : Go for a walk",
+					"Eighth time : oops not again !",
+					"Ninth time: did u do lab?",
+					"Tenth time: do ur assignment - go !",
+					"eleventh time : study cookies",
+					"twelveth time: REady for final !")
+					
+					
+					
+		var CookieUtil = {
+			set: function (name, value, expires, path, domain, secure) {
+				var cookieText = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+				if(expires instanceof Date) 
+					cookieText += "; expires=" + expires.toGMTString();
+
+				if(path) 
+					cookieText += "; path=" + path;
+
+				if(domain) 
+					cookieText += "; domain=" + domain;
+					
+				if(secure) 
+					cookieText += "; secure";
+					
+				document.cookie = cookieText;
+			},
+			
+			get: function (name) {
+				var cookieName = encodeURIComponent(name) + "=",
+				cookieStart = document.cookie.indexOf(cookieName),
+				cookieValue = null,
+				cookieEnd;
+
+				if(cookieStart > -1) {
+					cookieEnd = document.cookie.indexOf(";", cookieStart);
+					
+					if(cookieEnd == -1)
+						cookieEnd = document.cookie.length;
+				
+					cookieValue = decodeURIComponent
+					(document.cookie.substring(cookieStart + cookieName.length, cookieEnd));
+				}
+
+				return cookieValue;
+			}
+		}
+
+		function resetCookie()
+		{
+			var now = new Date();
+			now = now.setTime(Date.parse(now) + (365*24*60*60*1000));
+			if(CookieUtil.get("lab18cookie") == null)
+				CookieUtil.set("lab18cookie",(counter+1),now);
+			else
+				CookieUtil.set("lab18cookie",1,today);
+			window.location.reload();
+		}
+		</script>
+	</head>
+
+	<body>
+		<div style="margin-top:200px; margin-left: 400px; font-size: 24pt; color: blue">
+		<br><br>
+		<script>
+			var counter = 0;
+			var today = new Date();
+			today = today.setTime(Date.parse(today) + (365*24*60*60*1000));
+			if(CookieUtil.get("lab18cookie") == null)
+				counter = 1;
+			else
+				counter = parseInt(CookieUtil.get("lab18cookie"));
+			CookieUtil.set("lab18cookie",(counter+1),today);
+			document.write("You have visited this site " + counter + " times.<br />");
+			document.write(messages[((counter-1) % 12)]);
+		</script>
+		<br><br><br>
+		<input type="button" value=" Revisit Page  " onClick="window.location.reload()" />
+		<input type="button" value=" Reset Cookie " onClick="resetCookie()" />
+		</div>
+	</body>
+</html>

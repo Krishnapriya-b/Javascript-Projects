@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<title>Lab 15 CIS89C</title>
+		<meta charset="utf-8">
+		<h4 style="text-align:center;">CIS89C KrishnaPriya Bhattaram  Lab 15 </h4>
+		<script type="text/javascript">
+	
+		function WebLinks(url,name)
+		{
+			this.url = url;
+			this.name = name;
+		}
+		var frame1 = null;
+		var link1 = new WebLinks("http://www.apple.com/","apple");
+		var link2 = new WebLinks("http://www.nbc.com/","nbc");
+		var link3 = new WebLinks("http://www.kqed.org/","KQED");
+		var link4 = new WebLinks("http://www.pbs.org/","PBS");
+		var link5 = new WebLinks("http://www.khanacademy.com/","quora");
+		var link6 = new WebLinks("http://www.codecademy.com/#!/exercises/0","CodeAcademy");
+		var link7 = new WebLinks("http://www.toysrus.com/","Toys R us");
+		var link8 = new WebLinks("http://www.microsoft.com/","Google");
+		var link9 = new WebLinks("http://www.cnn.com/","CNN");
+		var link10 = new WebLinks("http://www.yogajournal.com/","YogaJournal");
+		var link11 = new WebLinks("http://www.weather.com/","Weather");
+		var link12 = new WebLinks("http://www.amazon.com/","amazon");
+//		var link13 = new WebLinks("http://www.khanacademy.org/","KhanAcademy");
+		
+		var links = new Array(link1,link2,link3,link4,link5,link6,link7,link8,link9,link10,link11,link12);
+		var Tdate = new Date();
+		var minute = Tdate.getMinutes();
+		var len = links.length;
+		var index = (minute % len);
+/*		document.write("<br>"+index+"<br>");
+		document.write(links[0].url);
+		document.write(links[1].url);
+		document.write(links[2].url);
+		document.write(links[3].url);
+		document.write(links[4].url);
+		document.write(links[5].url+"<br>");
+		document.write(links[6].url);
+		document.write(links[7].url);
+		document.write(links[8].url);
+		document.write(links[9].url);
+		document.write(links[10].url);
+		document.write(links[11].url);
+		document.write(links[12].url);
+*/
+	</script>
+</head>
+<body>
+	<iframe src="" id="myFrame" height=600px width=1320px  frameborder="0" ></iframe>
+	<script type="text/javascript">
+			frame1 = document.getElementById("myFrame");
+			frame1.src = links[index].url;
+			setInterval("refreshLink()", 30000); 
+			
+		function refreshLink()
+		{
+			Tdate = new Date();
+			minute = Tdate.getMinutes();
+			index = (minute % len);
+			frame1.src = links[index].url;
+//			document.write("<br>"+index+"<br>");
+		}
+		</script>
+</body>
+</html>
+		

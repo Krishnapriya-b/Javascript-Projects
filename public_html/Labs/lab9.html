@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CIS89C - Krishnapriya B - Lab9</title>
+<script type="text/javascript">
+
+
+
+				
+	var navWin = window.open("", "navWin", "height=600,width=1000,resizable");
+	var newscreenH = screen.availHeight / 3;
+	var newscreenW = screen.availWidth / 3;
+	
+	setTimeout("navWin.resizeTo(" + newscreenW + "," + newscreenH + ")", 2500);
+	
+		
+	function showNavP(obj) {
+		navWin.document.write("<body>");
+		navWin.document.bgColor = "wheat";
+		navWin.document.fgColor = "blue";
+		
+		for(var i in obj) {
+			if(obj[i] != null)
+				navWin.document.write(i + " : " + obj[i] + "<br>");
+			else
+				navWin.document.write(i + "<br>");
+		} 
+		
+		navWin.document.write("</body>");
+	} 
+	
+	showNavP(window.navigator);
+</script>
+</head>
+
+<body>
+</body>
+</html>

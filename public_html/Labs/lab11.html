@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>
+CIS89C - KrishnaPriya Bhattaram - Lab11
+</title>
+
+</head>
+
+<body>
+
+<style type="text/css">
+
+	#yellow {
+		background-color: lightblue;
+		}
+	.Div2 {
+		width: 50%;
+		height: 100px;
+		padding: 10px;
+		margin: 10px 0px;
+		background-color: lavender;
+		border-style:solid;
+		border-color:red;
+		border-width:medium;
+		}
+	.Div1 {
+		width: 50%;
+		height: 100px;
+		padding: 10px;
+		margin: 10px 0px;
+		}
+</style>
+
+<div class="Div1" id="yellow">
+		<h1>Click me to add a new movie</h1>
+</div>
+
+<script>
+
+pdiv = document.getElementById('yellow');
+parent = pdiv.parentNode;
+
+function newdiv()
+{
+//pdiv = document.getElementById('yellow');
+//parent = pdiv.parentNode;
+movie = prompt("Enter the movie name:","The Avengers");
+var newdiv = document.createElement("div");
+newdiv.className = "Div2";
+newdiv.innerHTML = "<h1>" + movie + "</h1>";
+parent.insertBefore(newdiv, pdiv);
+}
+
+//document.getElementById('yellow').onclick = newdiv;
+pdiv.onclick = newdiv;
+</script>
+
+</body>
+
+</html>

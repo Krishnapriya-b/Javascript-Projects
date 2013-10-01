@@ -1,0 +1,44 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<title> Lab 10</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+        .bcolorstart
+		{
+           background-color: lightblue;
+		   width:500px;
+		text-align:center;
+        }
+    </style>
+</head>
+<body>
+	<div style="background-color:lightgreen; width:500px;text-align:center;" >
+		<h3><p>Movies are fun - nice entertainment  </p>
+		<p>My favorites are comedies</p></h3>
+	</div>
+	<script type="text/javascript">
+		var fav1 = prompt("Enter your favorite Movie ","Catch me if you can");
+	   	var fdiv = document.createElement("div");
+		fdiv.id = "fdiv1";
+		fdiv.className = "bcolorstart";
+		fdiv.innerHTML = ("<h3>"+fav1 + " is a Good Movie"+"</h3>");
+		var beforediv = document.getElementsByTagName("div")[0];
+		document.body.insertBefore(fdiv,beforediv);
+		
+		var fav2 = prompt("One of My Favorite Movies  :","Amazing Spiderman");
+		var H1 = document.createElement("h1");
+		var Text = document.createTextNode(fav2);
+		H1.appendChild(Text);
+		document.body.appendChild(H1);
+		
+		var Div2 = document.createElement("div");
+		Div2.id = "myDiv";
+		Div2.className = "bcolorstart";
+		Div2.innerHTML = ("<h3>"+fav2 + ": A picture is worth thousand words<br><br><img src='amazingspider.jpg' height=500, width=450>"+"</h3>");
+		document.body.appendChild(Div2);
+	
+	</script>
+ </body>
+</html>

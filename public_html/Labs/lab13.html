@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Krishnapriya Bhattaram CIS89C  LAB13</title>
+ <style>
+ h1 { text-align: center }
+</style> 
+
+<br><br><br><br><br><br> 
+  <script>
+
+
+var r = Math.floor((Math.random()*255));
+var g = Math.floor((Math.random()*255));
+var b = Math.floor((Math.random()*255));
+
+
+
+//document.write('<br>',r,'<br>',g,'<br>',b);
+
+a= r.toString(16);
+if(r<16){
+a= "0"+a;
+}
+d= g.toString(16);
+if(g<16){
+d= "0"+d;
+}
+c= b.toString(16);
+if(b<16){
+c= "0"+c;
+}
+//document.write('<br>',a,'<br>',d,'<br>',c,'<br>');
+
+var color1 = "#" + a+d+c;
+document.write("<h1>Generating Random Color</h1><br><br>");
+document.write("<h1>The color is : "+color1+"</h1>");
+
+document.bgColor=color1;
+
+</script>
+ 
+ 
+  
+  
+</head>
+<body>
+
+
+
+
+
+<div align=center>
+
+
+
+</div>
+
+</body>
+</html>

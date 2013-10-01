@@ -1,0 +1,102 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CIS89C - KrishnaPriya Bhattaram- Lab20</title>
+<style type="text/css">
+div {
+	margin: 30px auto 30px auto;
+	text-align:center;
+width:820px;
+height:650px;
+-webkit-border-radius: 35px 35px 35px 35px;
+-moz-border-radius: 35px 35px 35px 35px;
+border-radius: 35px 35px 35px 35px;
+background:rgba(45,88,227,0.5);
+
+padding: 5px 5px 5px 5px;
+}
+
+
+</style>
+</head>
+<body style="background-color: lavender">
+	<div><br><br>
+		<form name="form">
+			<select name="world" size="4" onchange="updateImgBox(this.form)">
+				<option value="title" selected>World tour</option>
+		        <option value="usa">Go Around USA </option>
+		        <option value="india"> Visit India</option>
+      		</select>
+			<select name="imgBox" size="4" onchange="updateImg(this.form)">
+				<option value="imgTitle" disabled="disabled">Images</option>
+		        <option value="1"> </option>
+		        <option value="2"> </option>
+		        <option value="3"> </option>
+      		</select>
+    	</form>
+    	<br>
+    	<iframe id="imgFrame" src="blank.jpg" height="415" width="300" scrolling="no" style="border: 0;" > </iframe>
+	</div>
+<script type="text/javascript">
+	var img1 = new Image();
+	var img2 = new Image();
+	var img3 = new Image();
+	var img4 = new Image();
+	var img5 = new Image();
+	var img6 = new Image();
+	var imgDefault = new Image();
+	
+	img1.src = "miami.jpg";
+	img2.src = "liberty.jpg";
+	img3.src = "ggate.jpg";
+	img4.src = "taj.jpg";
+	img5.src = "him.jpg";
+	img6.src = "goa.jpg";
+	imgDefault.src = "blank.jpg";
+	
+	function updateImgBox(form) {
+		document.form.imgBox.options[1].selected = false;
+		document.form.imgBox.options[2].selected = false;
+		document.form.imgBox.options[3].selected = false;	
+		
+		if(form.world.options[0].selected) {
+			document.form.imgBox.options[1].text = "";
+			document.form.imgBox.options[2].text = "";
+			document.form.imgBox.options[3].text = "";	
+			document.getElementById("imgFrame").src = imgDefault.src;	
+		}
+		else if(form.world.options[1].selected) {
+			document.form.imgBox.options[1].text = "Miami Beach";
+			document.form.imgBox.options[2].text = "Liberty Statue";
+			document.form.imgBox.options[3].text = "The Golden gate bridge";
+		}	
+		else {
+			document.form.imgBox.options[1].text = "The Tajmahal";
+			document.form.imgBox.options[2].text = "The Himalayas";
+			document.form.imgBox.options[3].text = "The Goa Beach";
+		}
+	}
+	
+	function updateImg(form) {
+		if(form.world.options[1].selected) {
+			if(document.form.imgBox.options[1].selected)
+				document.getElementById("imgFrame").src = img1.src;
+			else if(document.form.imgBox.options[2].selected)
+				document.getElementById("imgFrame").src = img2.src;
+			else
+				document.getElementById("imgFrame").src = img3.src;
+		}	
+		else if(form.world.options[2].selected) {
+			if(document.form.imgBox.options[1].selected)
+				document.getElementById("imgFrame").src = img4.src;
+			else if(document.form.imgBox.options[2].selected)
+				document.getElementById("imgFrame").src = img5.src;
+			else
+				document.getElementById("imgFrame").src = img6.src;
+		}
+	}
+</script>
+</body>
+</html>

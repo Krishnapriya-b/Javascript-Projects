@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<h1> My trip to India ! </h1>
+<h2> Cash budget US $1000 </h2>
+
+
+
+<style type="text/css">
+table, td, th
+{
+border:1px solid green;
+}
+th
+{
+background-color:green;
+color:white;
+}
+</style>
+</head>
+
+
+
+<body>
+
+<script type="text/javascript">
+				document.write("<H1 style='text-align:center'>");	
+				var rate1=51.870; 
+				var rate = 0.019279;
+				var budget=1000 / rate;
+				var hotel = 6300,transport = 2200,food = 6500,clothes = 8300,accessories = 4500;
+				var souvenirs = 2700,movies = 3500;
+				var total =  (hotel+transport+food+clothes+accessories+movies+souvenirs);
+				var balance = budget - total;
+
+//				document.writeln("Budget = " +budget);
+//
+//				document.writeln("Total = " +total);
+//
+//				document.writeln("Balance = " +balance);
+//
+
+</script>
+
+
+
+<table>
+<tr>
+<th>Description</th>
+<th> Rupee -INR </th>
+<th>US Dollar $</th>
+</tr>
+<tr>
+<td>Hotel</td>
+<td><script type="text/javascript">document.write(hotel);</script></td>
+<td><script type="text/javascript">document.write(hotel*rate);</script></td>
+</tr>
+<tr>
+<td bgcolor='lavender'>Transportation</td>
+<td bgcolor='lavender'><script type="text/javascript">document.write(transport);</script></td>
+<td bgcolor='lavender'><script type="text/javascript">document.write(transport*rate);</script></td>
+</tr>
+<tr>
+<td>Food</td>
+<td><script type="text/javascript">document.write(food);</script></td>
+<td><script type="text/javascript">document.write(food*rate);</script></td>
+</tr>
+<tr>
+<td bgcolor='lavender'>Clothes</td>
+<td bgcolor='lavender'><script type="text/javascript">document.write(clothes);</script></td>
+<td bgcolor='lavender'><script type="text/javascript">document.write(clothes*rate);</script></td>
+</tr>
+
+<tr>
+<td>Accessories</td>
+<td><script type="text/javascript">document.write(accessories);</script></td>
+<td><script type="text/javascript">document.write(accessories*rate);</script></td>
+</tr>
+
+<tr>
+<td bgcolor='lavender'>Movies</td>
+<td bgcolor='lavender'><script type="text/javascript">document.write(movies);</script></td>
+<td bgcolor='lavender'><script type="text/javascript">document.write(movies*rate);</script></td>
+</tr>
+
+
+<tr>
+<td>Souvenirs</td>
+<td><script type="text/javascript">document.write(souvenirs);</script></td>
+<td><script type="text/javascript">document.write(souvenirs*rate);</script></td>
+</tr>
+
+<tr>
+<td bgcolor='lavender'>Total</td>
+<td bgcolor='lavender'><script type="text/javascript">document.write(total);</script></td>
+<td bgcolor='lavender'><script type="text/javascript">document.write(total*rate);</script></td>
+</tr>
+
+<tr>
+<td>Balance</td>
+<td><script type="text/javascript">document.write(balance);</script></td>
+<td><script type="text/javascript">document.write(balance*rate);</script></td>
+</tr>
+
+</table>
+
+<br>
+
+</body>
+</html>
+

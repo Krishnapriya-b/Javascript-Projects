@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<div style="text-align: center;">
+
+<h1> CIS89C KrishnaPriya Bhattaram Lab17 </h1>
+<h2> Pop up window generator </h2>
+
+</div>
+
+<style type="text/css">
+
+#wrapper {
+		width: 50%;
+		height: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		background-color: lavender;
+		border: 10px purple;
+		}
+#leftcolumn {
+		float: left;
+			margin-left: 80px;	
+text-align:center;
+width:600px;
+height:400px;
+-webkit-border-radius: 35px 35px 35px 35px;
+-moz-border-radius: 35px 35px 35px 35px;
+border-radius: 35px 35px 35px 35px;
+background:rgba(45,88,227,0.5);
+-webkit-box-shadow: #83A3B3 27px 27px 27px;-moz-box-shadow: #83A3B3 27px 27px 27px; box-shadow: #83A3B3 27px 27px 27px;
+
+		}
+
+#rightcolumn {
+		margin-left: 650px;
+		
+text-align:center;
+width:500px;
+height:400px;
+-webkit-border-radius: 35px 39px 34px 40px;
+-moz-border-radius: 35px 39px 34px 40px;
+border-radius: 35px 39px 34px 40px;
+background:rgba(45,88,227,0.5);
+-webkit-box-shadow: #83A3B3 27px 27px 27px;-moz-box-shadow: #83A3B3 27px 27px 27px; box-shadow: #83A3B3 27px 27px 27px;
+
+		}
+
+
+
+
+</style>
+
+<script>
+var w;
+function openwindow()
+{
+w=window.open('','', 'width=100,height=100');
+w.focus();
+}
+
+function myFunction()
+{
+
+var w1 = 800;
+var h1 = 800;
+w.resizeTo(w1,h1);
+//w.resizeTo(500,500);
+w.focus();
+}
+
+</script>
+
+</head>
+
+
+
+<body bgcolor='lavender'>
+<div style="text-align: center;">
+
+<section id="wrapper">
+
+<section id="leftcolumn">
+
+<script type="text/javascript">
+
+function createw(what) {
+    var URL = what.URL.value;
+
+    var windowName = 'mywin';
+
+    var features =
+        'width='        + what.width.value +
+        ',height='      + what.height.value +
+        ',directories=' + (what.directories.checked - 0) +
+        ',location='    + (what.location.checked - 0) +
+        ',menubar='     + (what.menubar.checked - 0) +
+        ',scrollbars='  + (what.scrollbars.checked - 0) +
+        ',status='      + (what.status.checked - 0) +
+        ',toolbar='     + (what.toolbar.checked - 0) +
+        ',resizable='   + (what.resizable.checked - 0);
+
+    window.open (URL, windowName, features);
+}
+
+
+
+function popupgen() {
+var vurl = document.form2.purl.value;
+var wi1 = document.form2.pwidth.value;
+var ht1 = document.form2.pheight.value;
+//document.write(vurl+"<br>");
+var check1v = document.getElementById("check1").checked;
+var check2v = document.getElementById("check2").checked;
+var check3v = document.getElementById("check3").checked;
+var check4v = document.getElementById("check4").checked;
+var check5v = document.getElementById("check5").checked;
+var check6v = document.getElementById("check6").checked;
+var check7v = document.getElementById("check7").checked;
+//document.write(wi1,ht1,check1v,check2v,check3v,check4v,check5v,check6v,check7v+"<br>"+vurl);
+
+// window.open('http://www.cnn.com','mycnn','width=600,height=600,toolbar=1,menubar=1,location=1,status=1,directories=0,scrollbars=1,resizable=1,left=100,top=100');
+w = window.open(vurl,'myapp','width=400,height=400,toolbar=0,menubar=0,location=0,status=0,scrollbars=1,resizable=1,directories=0,left=100,top=100');
+w.focus();
+w.resizeTo(wi1,ht1);
+//w.resizeTo(500,500);
+w.focus();
+
+
+//document.getElementsByTagName("html")[0].style.width=wi1+"px";
+//document.getElementsByTagName("html")[0].style.height=ht1+"px";
+}
+
+
+// CLEAR THE FORM
+function cleardata(){
+           form2.purl.value ="";
+           form2.pwidth.value ="";
+           form2.pheight.value ="";
+           form2.tool.checked="";
+           form2.loc.checked="";
+           form2.dir.checked="";
+		   form2.stat.checked="";
+           form2.menu.checked="";
+           form2.scroll.checked="";
+           form2.res.checked="";
+           
+          }
+</script>
+
+<br><br><br>
+<FORM name="form2">
+URL: <input type="text" name="purl" value="http://www.apple.com"><br>
+Toolbar:	<INPUT TYPE="checkbox" NAME="tool" value="0" id="check1"><br>
+Location:	<INPUT TYPE="checkbox" NAME="loc" value="0" id="check2"><br>
+Directories:<INPUT TYPE="checkbox" NAME="dir" value="0" id="check3"><br>
+Status:		<INPUT TYPE="checkbox" NAME="stat" value="0" id="check4"><br>
+Menubar:	<INPUT TYPE="checkbox" NAME="menu" value="0" id="check5"><br>
+Scrollbars:	<INPUT TYPE="checkbox" NAME="scroll" value="0" id="check6"><br>
+Resizable:	<INPUT TYPE="checkbox" NAME="res" value="0" id="check7"><br>
+
+Width: <input type="text" name="pwidth" value="600" ID="TextBox1"><br>
+Height: <input type="text" name="pheight" value="600" ID="TextBox2"><br>
+<input type="button" name="button1" value="Submit" onClick="popupgen()" >
+<input type="button" name="button2" value="Reset" onClick="cleardata()">
+
+
+</form>
+
+</section>
+
+</section>
+</div>
+
+</body>
+
+</html>

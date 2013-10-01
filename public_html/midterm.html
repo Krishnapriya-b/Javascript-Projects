@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<head>
+  <title> MIDTERM </title>
+  
+  <style type="text/css">
+table, td, th
+{
+border:1px solid green;
+border-collapse:collapse;
+}
+th
+{
+background-color:green;
+color:white;
+}
+#blue {
+		background-color: lightblue;
+		}
+.Div2 {
+		width: 50%;
+		height: 100px;
+		padding: 10px;
+		margin: 10px 0px;
+		background-color: lavender;
+		border-style:solid;
+		border-color:red;
+		border-width:medium;
+</style>
+  
+<script>
+
+  function cruise(cdate,cdest,cdescr,curl,shipn,shipdescr,shipurl,price)
+        {
+            this.cdate = cdate;
+            this.cdest = cdest;
+            this.cdescr = cdescr;
+			this.curl = curl;
+			this.shipn = shipn;
+			this.shipdescr = shipdescr;
+			this.shipurl = shipurl;
+            this.price = price;
+            this.showcruise = displayList;
+        }
+		function displayList(){
+		dispwin = window.open( '','dispwin','width=300,height=370,top=400,left=400,resizable,dependent')
+        dispwin.document.write("Cruise Date: " + this.cdate + "<br>");
+         dispwin.document.write("Cruise Destination: " + this.cdest + "<br>");
+         dispwin.document.write("Price: " + this.price + "<br>");
+        }
+		
+		
+ </script> 
+</head>
+
+<body bgcolor='lavender' >
+
+<div align='center'>
+
+<br>
+<h1> Welcome To Our Cruise Deals! </h1>
+<img src='cruise-ships.jpg'>
+
+
+<br><br><br>
+<table width="50%">
+<tr>
+<th>Departs</th>
+<th> Destination</th>
+<th>Ship</th>
+<th>Price From</th>
+</tr>
+<tr>
+<td>30 Nov 2012</td>
+<td><a href='http://www.royalcaribbean.com/findacruise/cruiseDetails/itinerary.do?packageCode=MJ03S028'>3 Night Bahama Cruise</a></td>
+<td><a href='http://www.royalcaribbean.com/findacruise/ships/class/ship/home.do?shipClassCode=SS&shipCode=MJ&br=R'>Majesty of the seas</a></td>
+<td>$169</td>
+</tr>
+<tr>
+<td bgcolor='mistyrose'>6 Dec 2013</td>
+<td bgcolor='mistyrose'><a href='http://www.carnival.com/cruise-to/baja-mexico.aspx'>3 Day Baja Mexico from LA CA</a></td>
+<td bgcolor='mistyrose'><a href='http://www.carnival.com/cruise-ships/carnival-inspiration.aspx'>Carnival Inspiration</a></td>
+<td bgcolor='mistyrose'>$259</td>
+</tr>
+<tr>
+<td>1 Jun 2013</td>
+<td><a href='http://disneycruise.disney.go.com/cruises-destinations/caribbean/itineraries/7-night-eastern-caribbean-cruise/'>7 Night Eastern Caribbean</a></td>
+<td><a href='http://disneycruise.disney.go.com/ships-activities/ships/fantasy/'>Disney Fantasy</a></td>
+<td>$1715</td>
+</tr>
+
+</table>
+
+
+<script type="text/javascript">
+
+var divcolors = new Array("tan","coral","lightblue","lightgreen","gold","orange","salmon");
+
+function openrcwin() {
+		rcwin=window.open("http://www.royalcaribbean.com","RoyalWin","width=900,height=500,top=200,left=400,resizable");
+	}
+	
+	function opencarwin() {
+		carwin=window.open('http://www.carnival.com','CarnivalWin','width=600,height=500,top=300,left=500,resizable');
+	}
+	
+	function opendiswin() {
+		diswin=window.open('http://disneycruise.disney.go.com','DisneyWin','width=800,height=500,top=250,left=450,resizable');
+	}
+	
+	
+
+function myPopup() {
+mywin = window.open( '','mywin','width=200,height=170,top=200,left=200,resizable,dependent')
+
+		mywin.document.write("<body>");
+		mywin.document.bgColor = "wheat";
+		mywin.document.fgColor = "blue";
+		mywin.document.write("<h3>Cruise.....Hot Deals</h3>");
+		mywin.document.write("<a href = 'javascript:opener.openrcwin()'>Royal Caribbean</a><br><br>");
+		mywin.document.write("<a href = 'javascript:opener.opencarwin()'>Carnival</a><br><br>");
+		mywin.document.write("<a href = 'javascript:opener.opendiswin()'>Disney Cruise</a>");
+		
+		mywin.document.write("</body>");
+}
+myPopup();
+</script>
+
+
+<div align='center' class="Div2" id="blue" ondblclick = "displayList()">
+<h2>DoubleClick to display cruise list</h2></div>
+
+
+</div>
+
+</body>
+
+
+</html>
+  
